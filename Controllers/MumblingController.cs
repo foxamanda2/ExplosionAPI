@@ -6,22 +6,22 @@ namespace ExplosionAPI.Controllers
     [ApiController]
     public class MumblingController : ControllerBase
     {
-        [HttpGet("{userString}")]
+        [HttpGet("{charString}")]
 
-        public string Mumbling(string userString)
+        public string Mumbling(string charString)
         {
 
             var results = "";
-            for (var index = 0; index < userString.Length; index++)
+            for (var index = 0; index < charString.Length; index++)
             {
-                var upperLetter = userString[index].ToString().ToUpper();
-                var lowerLetter = userString[index].ToString().ToLower();
+                var upperLetter = charString[index].ToString().ToUpper();
+                var lowerLetter = charString[index].ToString().ToLower();
                 results += upperLetter;
                 for (var i = 0; i < index; i++)
                 {
                     results += lowerLetter;
                 }
-                if (userString.Length - 1 > index)
+                if (charString.Length - 1 > index)
                 {
                     results += "-";
                 }
